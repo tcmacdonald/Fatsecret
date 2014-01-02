@@ -7,11 +7,11 @@ class FatSecret
     
     module ClassMethods
       
-      def create_profile
+      def create_profile(options={})
         query = {
           :method => 'profile.create'
         }
-        get(query)
+        get(query.merge(options))
       end
       
       def profile(oauth_token)
